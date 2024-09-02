@@ -64,6 +64,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
+      <Image source={{ uri: 'https://img.icons8.com/ios-filled/50/000000/search.png' }} style={styles.socialIcon} />
         <TextInput
           style={styles.searchInput}
           placeholder="Search Stations..."
@@ -83,7 +84,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#4c3c7c',
   },
   searchContainer: {
     flexDirection: 'row',
@@ -96,6 +97,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 5,
+  },
+  socialIcon:{
+    width: 24,
+    height: 24,
+   padding: 10,
+   paddingRight:20
   },
   searchInput: {
     flex: 1,
@@ -126,7 +133,7 @@ const styles = StyleSheet.create({
   stationName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#800080', // Purple color for text
+    color: '#4c3c7c', // Purple color for text
   },
   address: {
     fontSize: 14,

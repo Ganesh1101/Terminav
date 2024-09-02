@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   useColorScheme,
-  Image,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
@@ -19,8 +18,8 @@ const SignUpComponent = ({
   confirmPasswordField = true,
   rememberMeCheckbox = false,
   signUpButton = true,
-  mobileNumber='',
-  signInScreen = 'LoginScreen', // default login screen
+  mobileNumber = '', // Default value for mobileNumber is an empty string
+  signInScreen = 'LoginScreen', // Default login screen navigation
 }) => {
   const [usernameValue, setUsername] = React.useState('');
   const [emailValue, setEmail] = React.useState('');
@@ -28,38 +27,39 @@ const SignUpComponent = ({
   const [passwordValue, setPassword] = React.useState('');
   const [confirmPasswordValue, setConfirmPassword] = React.useState('');
   const [rememberMe, setRememberMe] = React.useState(false);
-  const scheme = useColorScheme(); // Determines light or dark mode
+  const scheme = useColorScheme(); // Determines if the theme is dark or light
   const isDarkMode = scheme === 'dark';
 
-  const navigation = useNavigation(); // Hook to access navigation
+  const navigation = useNavigation(); // Hook to handle navigation
 
   const handleSignUp = () => {
     // Handle sign-up logic here
-    console.log(`Username: ${usernameValue}, Email: ${emailValue}, Password: ${passwordValue}, Confirm Password: ${confirmPasswordValue}, Remember Me: ${rememberMe}`);
+    console.log(`Username: ${usernameValue}, Email: ${emailValue}, Mobile: ${mobileNumberValue}, Password: ${passwordValue}, Confirm Password: ${confirmPasswordValue}, Remember Me: ${rememberMe}`);
   };
 
   const handleSignIn = () => {
-    // Navigate to the login screen
+    // Navigate to the specified sign-in screen
     navigation.navigate(signInScreen);
   };
 
   return (
     <View style={[styles.container, isDarkMode && styles.containerDark]}>
       <Text style={[styles.title, isDarkMode && styles.titleDark]}>Sign Up</Text>
-      
+
       {username && (
         <TextInput
           style={[styles.input, isDarkMode && styles.inputDark]}
-          placeholder={placeholder ? "Username" : ''}
+          placeholder={placeholder ? 'Username' : ''}
           placeholderTextColor={isDarkMode ? '#999' : '#666'}
           value={usernameValue}
           onChangeText={setUsername}
         />
       )}
-         {mobileNumber && (
+
+      {mobileNumber && (
         <TextInput
           style={[styles.input, isDarkMode && styles.inputDark]}
-          placeholder={placeholder ? "Mobile Number" : ''}
+          placeholder={placeholder ? 'Mobile Number' : ''}
           placeholderTextColor={isDarkMode ? '#999' : '#666'}
           value={mobileNumberValue}
           onChangeText={setMobileNumber}
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#4c3c7c',
   },
   containerDark: {
     backgroundColor: '#121212',
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: '#333',
+    color: '#fff',
   },
   titleDark: {
     color: '#f2f2f2',
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     height: 50,
-    backgroundColor: '#800080',
+    backgroundColor: '#547cd4',
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
@@ -197,13 +197,14 @@ const styles = StyleSheet.create({
   },
   signInText: {
     fontSize: 14,
-    color: '#666',
+    color: '#fff',
   },
   signInTextDark: {
     color: '#bbb',
   },
   signInLink: {
-    color: '#007AFF',
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
 
