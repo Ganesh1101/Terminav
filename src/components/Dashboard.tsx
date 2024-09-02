@@ -39,6 +39,15 @@ const stationData = [
     lat:23.8159,
     lng:90.4105// Replace with a real image path
   },
+  {
+    id: '5',
+    stationName: 'Mumbai LTT Station',
+    address: '456 Elm St, City C',
+    platforms: 7,
+    imageUrl: require('../images/TermiNAV[2].png'),
+    lat:19.0697,
+    lng: 72.8920// Replace with a real image path
+  },
   // Add more station data as needed
 ];
 
@@ -84,7 +93,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#4c3c7c',
+    backgroundColor: '#7A42BF',
   },
   searchContainer: {
     flexDirection: 'row',
@@ -133,7 +142,7 @@ const styles = StyleSheet.create({
   stationName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#4c3c7c', // Purple color for text
+    color: '#7A42BF', // Purple color for text
   },
   address: {
     fontSize: 14,

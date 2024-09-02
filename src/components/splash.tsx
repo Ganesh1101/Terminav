@@ -16,7 +16,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../images/logo(Terminav).png')} // Replace with your image path
+        source={require('../images/logo.png')} // Replace with your image path
         style={styles.logo}
       />
     </View>
